@@ -1,0 +1,13 @@
+name: Kittygram CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: echo "Kittygram workflow is configured"
