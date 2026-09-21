@@ -2,4 +2,4 @@ repo_owner: SedWaters
 taski_domain: https://taski.111.88.150.24.nip.io
 kittygram_domain: https://kittygram.111.88.150.24.nip.io
 dockerhub_username: SedWaters
-vm_name: r-fullstack-magistracy-sedwaters
+vm_name: r-backend-vm-sedwaters
