@@ -1,0 +1,38 @@
+services:
+  db:
+    image: postgres:13
+    env_file: .env
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+
+  backend:
+    image: judgement113322/kittygram_backend:latest
+    env_file: .env
+    depends_on:
+      - db
+    volumes:
+      - static:/app/static
+      - media:/app/media
+
+  frontend:
+    image: judgement113322/kittygram_frontend:latest
+    volumes:
+      - frontend:/app/result
+
+  gateway:
+    image: judgement113322/kittygram_gateway:latest
+    depends_on:
+      - backend
+      - frontend
+    ports:
+      - "80:80"
+    volumes:
+      - static:/static
+      - media:/media
+      - frontend:/usr/share/nginx/html
+
+volumes:
+  pg_data:
+  static:
+  media:
+  frontend:
