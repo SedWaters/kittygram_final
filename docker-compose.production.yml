@@ -30,6 +30,7 @@ services:
       - static:/static
       - media:/media
       - frontend:/usr/share/nginx/html
+      - ./gateway/default.conf:/etc/nginx/templates/default.conf.template:ro
 
 volumes:
   pg_data:
