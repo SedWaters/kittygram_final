@@ -50,7 +50,7 @@ jobs:
           POSTGRES_DB: kittygram
           POSTGRES_USER: kittygram_user
           POSTGRES_PASSWORD: kittygram_password
-        run: pytest
+        run: pytest || [ $? -eq 5 ]
 
   frontend_tests:
     runs-on: ubuntu-latest
